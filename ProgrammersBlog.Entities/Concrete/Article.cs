@@ -20,6 +20,7 @@ namespace ProgrammersBlog.Entities.Concrete
         public User User { get; set; } //Paylasan kullanıcı
         public ICollection<Comment> Comment { get; set; }
         public object SeoDescription { get; set; }
+        public object Comments { get; set; }
     }
 
 }
