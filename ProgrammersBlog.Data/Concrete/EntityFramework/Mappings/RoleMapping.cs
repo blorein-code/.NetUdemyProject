@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ProgrammersBlog.Entities.Concrete;
+using System;
 
 namespace ProgrammersBlog.Data.Concrete.EntityFramework.Mappings
 {
@@ -24,6 +25,19 @@ namespace ProgrammersBlog.Data.Concrete.EntityFramework.Mappings
             builder.Property(r => r.IsDeleted).IsRequired();
             builder.Property(r => r.Note).HasMaxLength(500);
             builder.ToTable("Roles");
+            builder.HasData(new Role 
+            { 
+                Id = 1,
+                Name ="Admin",
+                Description ="Admin Rolü,Tüm Haklara Sahiptir",
+                IsActive = true,
+                IsDeleted = false,
+                CreatedByName = "InitialCreate",  //Veritabanı oluşurken entity oluştuğunu belirtiyoruz.
+                CreatedDate = DateTime.Now,
+                ModifiedByName = "InitialCreate",
+                ModifiedDate = DateTime.Now,
+                Note = "Admin Rolüdür."
+            });
         }
     }
 }
