@@ -60,7 +60,53 @@ namespace ProgrammersBlog.Data.Concrete.EntityFramework.Mappings
                     ModifiedDate = DateTime.Now,
                     Note = "C# 9.0 ve .NET 5 Yenilikleri",
                     UserId = 1,
-                }
+                    ViewsCount=100,
+                    CommentCount=1
+                },
+                 new Article
+                 {
+                     Id = 2,
+                     CategoryId = 2,
+                     Title = "C++ Yenilikleri",
+                     Content = "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.",
+                     Thumbnail = "default.jpg",
+                     SeoDescription = "C++ Yenilikleri",
+                     SeoTags = "C++",
+                     SeoAuthor = "Berke Topcu",
+                     Date = DateTime.Now,
+                     IsActive = true,
+                     IsDeleted = false,
+                     CreatedByName = "InitialCreate",
+                     CreatedDate = DateTime.Now,
+                     ModifiedByName = "InitialCreate",
+                     ModifiedDate = DateTime.Now,
+                     Note = "C++ Yenilikleri",
+                     UserId = 1,
+                     ViewsCount = 321,
+                     CommentCount = 1
+                 },
+                  new Article
+                  {
+                      Id = 3,
+                      CategoryId = 3,
+                      Title = "Javascript Yenilikleri",
+                      Content = "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.",
+                      Thumbnail = "default.jpg",
+                      SeoDescription = "Javascript Yenilikleri",
+                      SeoTags = "Javascript",
+                      SeoAuthor = "Berke Topcu",
+                      Date = DateTime.Now,
+                      IsActive = true,
+                      IsDeleted = false,
+                      CreatedByName = "InitialCreate",
+                      CreatedDate = DateTime.Now,
+                      ModifiedByName = "InitialCreate",
+                      ModifiedDate = DateTime.Now,
+                      Note = "Javascript Yenilikleri",
+                      UserId = 1,
+                      ViewsCount = 235,
+                      CommentCount = 1
+                  } 
 
                 );
         }
