@@ -19,8 +19,8 @@ namespace ProgrammersBlog.Entities.Concrete
         public int UserId { get; set; }
         public User User { get; set; } //Paylasan kullanıcı
         public ICollection<Comment> Comment { get; set; }
-        public object SeoDescription { get; set; }
-        public object Comments { get; set; }
+        public string SeoDescription { get; set; }
+        public string Comments { get; set; }
     }
 
 }

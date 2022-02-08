@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProgrammersBlog.Data.Concrete.EntityFramework.Mappings
 {
-    public class ArticleMappings : IEntityTypeConfiguration<Article>
+    public class ArticleMapping : IEntityTypeConfiguration<Article>
     {
         public void Configure(EntityTypeBuilder<Article> builder)
         {
@@ -37,7 +37,7 @@ namespace ProgrammersBlog.Data.Concrete.EntityFramework.Mappings
             builder.Property(a => a.IsDeleted).IsRequired();
             builder.Property(a => a.Note).HasMaxLength(500);
             builder.HasOne<Category>(navigationExpression: a => a.Category).WithMany(navigationExpression: c => c.Articles).HasForeignKey(a => a.CategoryId);
-            builder.HasOne<User>(navigationExpression: a => a.User).WithMany(navigationExpression: u => u.Articles).HasForeignKey(a =>a.UserId);
+            builder.HasOne<User>(navigationExpression: a => a.User).WithMany(navigationExpression: u => u.Articles).HasForeignKey(a => a.UserId);
             builder.ToTable("Articles");
 
             builder.HasData(
@@ -60,8 +60,8 @@ namespace ProgrammersBlog.Data.Concrete.EntityFramework.Mappings
                     ModifiedDate = DateTime.Now,
                     Note = "C# 9.0 ve .NET 5 Yenilikleri",
                     UserId = 1,
-                    ViewsCount=100,
-                    CommentCount=1
+                    ViewsCount = 100,
+                    CommentCount = 1
                 },
                  new Article
                  {
@@ -106,11 +106,11 @@ namespace ProgrammersBlog.Data.Concrete.EntityFramework.Mappings
                       UserId = 1,
                       ViewsCount = 235,
                       CommentCount = 1
-                  } 
+                  }
 
                 );
         }
 
-       
+
     }
 }
