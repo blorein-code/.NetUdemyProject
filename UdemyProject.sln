@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammersBlog.Shared", "ProgrammersBlog.Shared\ProgrammersBlog.Shared.csproj", "{9330F07C-E82B-4536-BD5F-EEC34E5EA7E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgrammersBlog.Shared", "ProgrammersBlog.Shared\ProgrammersBlog.Shared.csproj", "{9330F07C-E82B-4536-BD5F-EEC34E5EA7E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammersBlog.Entities", "ProgrammersBlog.Entities\ProgrammersBlog.Entities.csproj", "{2C807B59-0EF9-4BB5-BAB6-8B9437ADF978}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgrammersBlog.Entities", "ProgrammersBlog.Entities\ProgrammersBlog.Entities.csproj", "{2C807B59-0EF9-4BB5-BAB6-8B9437ADF978}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammersBlog.Data", "ProgrammersBlog.Data\ProgrammersBlog.Data.csproj", "{A8206D11-9517-4BA4-A3DC-D206483318C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgrammersBlog.Data", "ProgrammersBlog.Data\ProgrammersBlog.Data.csproj", "{A8206D11-9517-4BA4-A3DC-D206483318C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Programmers.Blog.Services", "Programmers.Blog.Services\Programmers.Blog.Services.csproj", "{205648AB-C22D-4990-A75A-72079FB65DBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgrammersBlog.Services", "Programmers.Blog.Services\ProgrammersBlog.Services.csproj", "{205648AB-C22D-4990-A75A-72079FB65DBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Programmers.Blog.MVC", "Programmers.Blog.MVC\Programmers.Blog.MVC.csproj", "{1321162B-EEB5-4385-B31F-76ED6FD91E51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgrammersBlog.MVC", "Programmers.Blog.MVC\ProgrammersBlog.MVC.csproj", "{1321162B-EEB5-4385-B31F-76ED6FD91E51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
