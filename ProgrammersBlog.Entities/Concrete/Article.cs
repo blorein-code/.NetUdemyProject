@@ -10,8 +10,8 @@ namespace ProgrammersBlog.Entities.Concrete
         public string Content { get; set; }//Resim İçerik
         public string Thumbnail { get; set; }// Resim url için
         public DateTime Date { get; set; }// Tarih
-        public int ViewsCount { get; set; }
-        public int CommentCount { get; set; }
+        public int ViewsCount { get; set; } = 0;
+        public int CommentCount { get; set; } = 0;
         public string SeoAuthor { get; set; } //Yazan
         public string SeoTags { get; set; } //Yazan
         public int CategoryId { get; set; }
