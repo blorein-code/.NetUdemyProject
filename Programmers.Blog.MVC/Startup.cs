@@ -19,7 +19,8 @@ namespace Programmers.Blog.MVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            services.AddAutoMapper(typeof(Startup));
             services.LoadMyServices();
         }
 
@@ -29,6 +30,7 @@ namespace Programmers.Blog.MVC
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseStatusCodePages();
             }
             else
             {
@@ -45,9 +47,12 @@ namespace Programmers.Blog.MVC
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapAreaControllerRoute(
+                    name: "Admin",
+                    areaName: "Admin",
+                    pattern: "Admin/{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapDefaultControllerRoute();
+                    
             });
         }
     }
