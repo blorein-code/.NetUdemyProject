@@ -24,5 +24,9 @@ namespace ProgrammersBlog.MVC.Areas.Admin.Controllers
                 return View(result.Data);
             
         }
+        public IActionResult Add()
+        {
+            return PartialView("_CategoryAdd");
+        }
     }
 }
