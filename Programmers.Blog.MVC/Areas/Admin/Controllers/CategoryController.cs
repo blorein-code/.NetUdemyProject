@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace ProgrammersBlog.MVC.Areas.Admin.Controllers
 {
@@ -55,6 +56,15 @@ namespace ProgrammersBlog.MVC.Areas.Admin.Controllers
                 CategoryAddPartial = await this.RenderViewToStringAsync("_CategoryAdd", categoryAddDto)
             });
             return Json(categoryAddAjaxErrorModel);
+        }
+        public async Task<JsonResult> GetAllCategories()
+        {
+            var result = await _categoryService.GetAll();
+            var categories = JsonSerializer.Serialize(result.Data,new JsonSerializerOptions 
+            {
+                ReferenceHandler = ReferenceHandler.Preserve
+            });
+            return Json(categories);
         }
     }
 }
