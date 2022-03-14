@@ -130,6 +130,10 @@
                                 <td>${category.CreatedByName}</td>
                                 <td>${convertToShortDate(category.ModifiedDate)}</td>
                                 <td>${category.ModifiedByName}</td>
+                                <td>
+                                    <button class="btn btn-primary btn-sm"><span class="fas fa-edit"></span>Düzenle</button>
+                                    <button class="btn btn-danger btn-sm btn-delete" data-id="${category.Id}"><span class="fas fa-minus-circle"></span>Sil</button>
+                                </td>
                             </tr>`;
 
                                             });
@@ -143,7 +147,9 @@
                                     },
                                     error: function (err) {
                                         console.log(err);
-                                        toastr.error(`${err.statusText}`,'İşlem Başarısız!')
+                                        $('.spinner-border').hide();
+                                        $('#categoriesTable').fadeIn(1000);
+                                        toastr.error(`${err.responseText}`,'Hata!')
                                     }
                                 });
                             }
@@ -171,7 +177,7 @@
                             const newFormBody = $('.modal-body', categoryAddAjaxModel.CategoryAddPartial);
                             placeHolderDiv.find('.modal-body').replaceWith(newFormBody);
                             const isValid = newFormBody.find('[name="IsValid"]').val() === 'True';
-                            debugger;
+
                             if (isValid) {
                                 placeHolderDiv.find('.modal').modal('hide');
 
@@ -186,6 +192,12 @@
                                 <td>${categoryAddAjaxModel.CategoryDto.Category.CreatedByName}</td>
                                 <td>${convertToShortDate(categoryAddAjaxModel.CategoryDto.Category.ModifiedDate)}</td>
                                 <td>${categoryAddAjaxModel.CategoryDto.Category.ModifiedByName}</td>
+                                @*Yeni eklenecek kategorinin düzenle ve sil butonlu gelmesi için buraya şu şekilde eklicez
+                                    ama data-id hata veriyo
+                                    <td>
+                                    <button class="btn btn-primary btn-sm"><span class="fas fa-edit"></span>Düzenle</button>
+                                    <button class="btn btn-danger btn-sm btn-delete" data-id="${category.Id}"><span class="fas fa-minus-circle"></span>Sil</button>
+                                </td> *@
                             </tr>`;
                                 const newTableRowObject = $(newTableRow);
                                 newTableRowObject.hide();
@@ -206,6 +218,60 @@
                         });
                     });
                 });
+                debugger;
+                @*Ajax POST / Posting the FormData as CategoryAddDto ends here*@
+                @* Ajax POST / Deleting a Category starts from here*@
+                $(document).on('click', '.btn-delete', function (event) {
+                    event.preventDefault();
+                    const id = $(this).attr('data-id');
+                    const tableRow = $(`[name="${id}"]`);
+                    //Sweetalert start here.
+                    const categoryName = tableRow.find('td:eq(1)').text();
+                    Swal.fire({
+                        title: 'Silmek İstediğinize Emin misiniz?',
+                        text: `${categoryName} Adlı Kategori Silinecektir!`,
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Evet, Silmek İstiyorum!',
+                        cancelButtonText: 'Hayır'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            $.ajax({
+                                type: 'POST',//işlem türü
+                                dataType: 'json',//verinin tipi
+                                data: { categoryId: id },
+                                url: '@Url.Action("Delete","Category")',
+                                success: function (data) {
+                                    const categoryDto = jQuery.parseJSON(data);
+                                    if (categoryDto.ResultStatus === 0) {
+                                        Swal.fire(
+                                            'Silindi!',
+                                            `${categoryDto.Category.Name} adlı kategori başarıyla silinmiştir.`,
+                                            'success'
+                                        );
+
+                                        tableRow.fadeOut(1000);
+                                    } else {
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: 'Başarısız İşlem!',
+                                            text: `${result.Message}`,
+                                        });
+                                    }
+
+                                },
+                                error: function (err) {
+                                    console.log(err);
+                                    toastr.error(`${err.responseText}`, "Hata!");
+                                },
+                            })
+                        }
+                    })
+                    //Sweetalert end here.
+                });
+
             });
     </script>
 }
