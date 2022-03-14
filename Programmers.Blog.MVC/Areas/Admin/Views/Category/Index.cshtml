@@ -46,12 +46,13 @@
                             <th>Oluşturan Kişi</th>
                             <th>Son Düzenleme Tarihi </th>
                             <th>Son Düzenleyen Kişi</th>
+                            <th>İşlemler</th>
                         </tr>
                     </tfoot>
                     <tbody>
                         @foreach (var category in Model.Categories)
                         {
-                            <tr>
+                            <tr name="@category.Id">
                                 <td>@category.Id</td>
                                 <td>@category.Name</td>
                                 <td>@category.Description</td>
@@ -63,8 +64,8 @@
                                 <td>@category.ModifiedDate.ToShortDateString()</td>
                                 <td>@category.ModifiedByName</td>
                                 <td>
-                                    <button class="btn btn-primary">Düzenle</button>
-                                    <button class="btn btn-danger btn-delete">Sil</button>
+                                    <button class="btn btn-primary btn-sm"><span class="fas fa-edit"></span>Düzenle</button>
+                                    <button class="btn btn-danger btn-sm btn-delete" data-id="@category.Id"><span class="fas fa-minus-circle"></span>Sil</button>
                                 </td>
                             </tr>
 
@@ -119,7 +120,7 @@
                                             $.each(categoryListDto.Categories.$values, function (index, category) {
                                                 tableBody += `
                                                  <tr>
-                                <td>${category.id}</td>
+                                <td>${category.Id}</td>
                                 <td>${category.Name}</td>
                                 <td>${category.Description}</td>
                                 <td>${convertFirstLetterToUpperCase(category.IsActive.toString())}</td>
@@ -167,9 +168,9 @@
                         const dataToSend = form.serialize();
                         $.post(actionUrl, dataToSend).done(function (data) {
                             const categoryAddAjaxModel = jQuery.parseJSON(data);
-                            const newFormBody = $('.model-body', categoryAddAjaxModel.CategoryAddPartial);
+                            const newFormBody = $('.modal-body', categoryAddAjaxModel.CategoryAddPartial);
                             placeHolderDiv.find('.modal-body').replaceWith(newFormBody);
-                            const isValid = newFormBody.find('[name"IsValid"]').val() !== 'False';
+                            const isValid = newFormBody.find('[name="IsValid"]').val() === 'True';
                             debugger;
                             if (isValid) {
                                 placeHolderDiv.find('.modal').modal('hide');
@@ -187,7 +188,7 @@
                                 <td>${categoryAddAjaxModel.CategoryDto.Category.ModifiedByName}</td>
                             </tr>`;
                                 const newTableRowObject = $(newTableRow);
-                                //newTableRowObjet.hide();
+                                newTableRowObject.hide();
                                 $('#categoriesTable').append(newTableRowObject);
                                 newTableRowObject.fadeIn(3500);
                                 toastr.success(`${categoryAddAjaxModel.CategoryDto.Message}`, 'Başarılı İşlem!');
