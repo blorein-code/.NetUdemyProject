@@ -10,23 +10,23 @@ using ProgrammersBlog.Data.Concrete.EntityFramework.Contexts;
 namespace ProgrammersBlog.Data.Migrations
 {
     [DbContext(typeof(ProgrammersBlogContext))]
-    [Migration("20220223184723_InitialCreate")]
+    [Migration("20220330191525_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.0");
+                .HasAnnotation("ProductVersion", "5.0.13")
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("ProgrammersBlog.Entities.Concrete.Article", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
@@ -117,12 +117,12 @@ namespace ProgrammersBlog.Data.Migrations
                             CommentCount = 1,
                             Content = "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.",
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 23, 21, 47, 23, 217, DateTimeKind.Local).AddTicks(1636),
-                            Date = new DateTime(2022, 2, 23, 21, 47, 23, 217, DateTimeKind.Local).AddTicks(979),
+                            CreatedDate = new DateTime(2022, 3, 30, 22, 15, 25, 448, DateTimeKind.Local).AddTicks(6649),
+                            Date = new DateTime(2022, 3, 30, 22, 15, 25, 448, DateTimeKind.Local).AddTicks(5973),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 23, 21, 47, 23, 217, DateTimeKind.Local).AddTicks(1959),
+                            ModifiedDate = new DateTime(2022, 3, 30, 22, 15, 25, 448, DateTimeKind.Local).AddTicks(6979),
                             Note = "C# 9.0 ve .NET 5 Yenilikleri",
                             SeoAuthor = "Berke Topcu",
                             SeoDescription = "C# 9.0 ve .NET 5 Yenilikleri",
@@ -139,12 +139,12 @@ namespace ProgrammersBlog.Data.Migrations
                             CommentCount = 1,
                             Content = "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.",
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 23, 21, 47, 23, 217, DateTimeKind.Local).AddTicks(2684),
-                            Date = new DateTime(2022, 2, 23, 21, 47, 23, 217, DateTimeKind.Local).AddTicks(2682),
+                            CreatedDate = new DateTime(2022, 3, 30, 22, 15, 25, 448, DateTimeKind.Local).AddTicks(7829),
+                            Date = new DateTime(2022, 3, 30, 22, 15, 25, 448, DateTimeKind.Local).AddTicks(7828),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 23, 21, 47, 23, 217, DateTimeKind.Local).AddTicks(2685),
+                            ModifiedDate = new DateTime(2022, 3, 30, 22, 15, 25, 448, DateTimeKind.Local).AddTicks(7831),
                             Note = "C++ Yenilikleri",
                             SeoAuthor = "Berke Topcu",
                             SeoDescription = "C++ Yenilikleri",
@@ -161,12 +161,12 @@ namespace ProgrammersBlog.Data.Migrations
                             CommentCount = 1,
                             Content = "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.",
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 23, 21, 47, 23, 217, DateTimeKind.Local).AddTicks(2691),
-                            Date = new DateTime(2022, 2, 23, 21, 47, 23, 217, DateTimeKind.Local).AddTicks(2690),
+                            CreatedDate = new DateTime(2022, 3, 30, 22, 15, 25, 448, DateTimeKind.Local).AddTicks(7836),
+                            Date = new DateTime(2022, 3, 30, 22, 15, 25, 448, DateTimeKind.Local).AddTicks(7835),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 23, 21, 47, 23, 217, DateTimeKind.Local).AddTicks(2692),
+                            ModifiedDate = new DateTime(2022, 3, 30, 22, 15, 25, 448, DateTimeKind.Local).AddTicks(7837),
                             Note = "Javascript Yenilikleri",
                             SeoAuthor = "Berke Topcu",
                             SeoDescription = "Javascript Yenilikleri",
@@ -183,7 +183,7 @@ namespace ProgrammersBlog.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("CreatedByName")
                         .IsRequired()
@@ -229,12 +229,12 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = 1,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 23, 21, 47, 23, 219, DateTimeKind.Local).AddTicks(2218),
+                            CreatedDate = new DateTime(2022, 3, 30, 22, 15, 25, 450, DateTimeKind.Local).AddTicks(8539),
                             Description = "C# Programlama Dili ile İlgili En Güncel Bilgiler",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 23, 21, 47, 23, 219, DateTimeKind.Local).AddTicks(2226),
+                            ModifiedDate = new DateTime(2022, 3, 30, 22, 15, 25, 450, DateTimeKind.Local).AddTicks(8546),
                             Name = "C#",
                             Note = "C# Blog Kategorisi"
                         },
@@ -242,12 +242,12 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = 2,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 23, 21, 47, 23, 219, DateTimeKind.Local).AddTicks(2235),
+                            CreatedDate = new DateTime(2022, 3, 30, 22, 15, 25, 450, DateTimeKind.Local).AddTicks(8563),
                             Description = "C++ Programlama Dili ile İlgili En Güncel Bilgiler",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 23, 21, 47, 23, 219, DateTimeKind.Local).AddTicks(2236),
+                            ModifiedDate = new DateTime(2022, 3, 30, 22, 15, 25, 450, DateTimeKind.Local).AddTicks(8564),
                             Name = "C++",
                             Note = "C++ Blog Kategorisi"
                         },
@@ -255,12 +255,12 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = 3,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 23, 21, 47, 23, 219, DateTimeKind.Local).AddTicks(2240),
+                            CreatedDate = new DateTime(2022, 3, 30, 22, 15, 25, 450, DateTimeKind.Local).AddTicks(8568),
                             Description = "Javascript Programlama Dili ile İlgili En Güncel Bilgiler",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 23, 21, 47, 23, 219, DateTimeKind.Local).AddTicks(2241),
+                            ModifiedDate = new DateTime(2022, 3, 30, 22, 15, 25, 450, DateTimeKind.Local).AddTicks(8569),
                             Name = "Javascript",
                             Note = "Javascript Blog Kategorisi"
                         });
@@ -271,7 +271,7 @@ namespace ProgrammersBlog.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("ArticleId")
                         .HasColumnType("int");
@@ -319,11 +319,11 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = 1,
                             ArticleId = 1,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 23, 21, 47, 23, 220, DateTimeKind.Local).AddTicks(6049),
+                            CreatedDate = new DateTime(2022, 3, 30, 22, 15, 25, 452, DateTimeKind.Local).AddTicks(3091),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 23, 21, 47, 23, 220, DateTimeKind.Local).AddTicks(6056),
+                            ModifiedDate = new DateTime(2022, 3, 30, 22, 15, 25, 452, DateTimeKind.Local).AddTicks(3098),
                             Note = "C# Makale Yorum",
                             Text = "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur."
                         },
@@ -332,11 +332,11 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = 2,
                             ArticleId = 2,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 23, 21, 47, 23, 220, DateTimeKind.Local).AddTicks(6065),
+                            CreatedDate = new DateTime(2022, 3, 30, 22, 15, 25, 452, DateTimeKind.Local).AddTicks(3112),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 23, 21, 47, 23, 220, DateTimeKind.Local).AddTicks(6067),
+                            ModifiedDate = new DateTime(2022, 3, 30, 22, 15, 25, 452, DateTimeKind.Local).AddTicks(3113),
                             Note = "C++ Makale Yorum",
                             Text = "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur."
                         },
@@ -345,11 +345,11 @@ namespace ProgrammersBlog.Data.Migrations
                             Id = 3,
                             ArticleId = 3,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 23, 21, 47, 23, 220, DateTimeKind.Local).AddTicks(6070),
+                            CreatedDate = new DateTime(2022, 3, 30, 22, 15, 25, 452, DateTimeKind.Local).AddTicks(3117),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 23, 21, 47, 23, 220, DateTimeKind.Local).AddTicks(6071),
+                            ModifiedDate = new DateTime(2022, 3, 30, 22, 15, 25, 452, DateTimeKind.Local).AddTicks(3118),
                             Note = "Javascript Makale Yorum",
                             Text = "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur."
                         });
@@ -360,7 +360,7 @@ namespace ProgrammersBlog.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("CreatedByName")
                         .IsRequired()
@@ -407,12 +407,12 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = 1,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 23, 21, 47, 23, 221, DateTimeKind.Local).AddTicks(7168),
+                            CreatedDate = new DateTime(2022, 3, 30, 22, 15, 25, 453, DateTimeKind.Local).AddTicks(4646),
                             Description = "Admin Rolü,Tüm Haklara Sahiptir",
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 23, 21, 47, 23, 221, DateTimeKind.Local).AddTicks(7176),
+                            ModifiedDate = new DateTime(2022, 3, 30, 22, 15, 25, 453, DateTimeKind.Local).AddTicks(4653),
                             Name = "Admin",
                             Note = "Admin Rolüdür."
                         });
@@ -423,7 +423,7 @@ namespace ProgrammersBlog.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("CreatedByName")
                         .IsRequired()
@@ -504,7 +504,7 @@ namespace ProgrammersBlog.Data.Migrations
                         {
                             Id = 1,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 2, 23, 21, 47, 23, 225, DateTimeKind.Local).AddTicks(9375),
+                            CreatedDate = new DateTime(2022, 3, 30, 22, 15, 25, 457, DateTimeKind.Local).AddTicks(8274),
                             Description = "İlk Admin Kullanıcı",
                             Email = "berke-topcu@hotmail.com",
                             FirstName = "Berke",
@@ -512,7 +512,7 @@ namespace ProgrammersBlog.Data.Migrations
                             IsDeleted = false,
                             LastName = "Topcu",
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 2, 23, 21, 47, 23, 225, DateTimeKind.Local).AddTicks(9383),
+                            ModifiedDate = new DateTime(2022, 3, 30, 22, 15, 25, 457, DateTimeKind.Local).AddTicks(8283),
                             Note = "Admin Kullanıcısı",
                             PasswordHash = new byte[] { 48, 49, 57, 50, 48, 50, 51, 97, 55, 98, 98, 100, 55, 51, 50, 53, 48, 53, 49, 54, 102, 48, 54, 57, 100, 102, 49, 56, 98, 53, 48, 48 },
                             Picture = "https://img2.pngindir.com/20180419/ute/kisspng-computer-icons-user-profile-clip-art-set-of-abstract-icon-5ad95b8330b517.3362737615241941791995.jpg",

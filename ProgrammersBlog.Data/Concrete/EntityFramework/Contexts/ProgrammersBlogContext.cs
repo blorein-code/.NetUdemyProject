@@ -13,7 +13,7 @@ namespace ProgrammersBlog.Data.Concrete.EntityFramework.Contexts
         public DbSet<User> Users { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(connectionString: @"Server=localhost;Database=master;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(connectionString: @"Server=localhost;Database=ProgrammersBlogDB;Trusted_Connection=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
